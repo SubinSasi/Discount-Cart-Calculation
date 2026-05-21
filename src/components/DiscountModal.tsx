@@ -22,7 +22,7 @@ export default function DiscountModal({
     editingDiscount?.valueType || "percentage",
   );
   const [value, setValue] = useState(editingDiscount?.value || 0);
-  const [duration, setDuration] = useState(editingDiscount?.duration || 3);
+  const [duration, setDuration] = useState(editingDiscount?.duration || 0);
   const [error, setError] = useState("");
   function validate() {
     setError("");
