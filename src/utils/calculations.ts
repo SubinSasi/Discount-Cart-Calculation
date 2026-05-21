@@ -10,7 +10,6 @@ function getDiscountAmount(
       100
     );
   }
-
   return discount.value;
 }
 
@@ -23,16 +22,12 @@ export function calculatePrices(
     discounts.filter(
       (d) => d.enabled
     );
-
   let oneTimeFinal =
     oneTimePrice;
-
   let monthlyFirstPeriod =
     monthlyPrice;
-
   let monthlyRemaining =
     monthlyPrice;
-
   activeDiscounts.forEach(
     (discount) => {
       if (
@@ -44,10 +39,8 @@ export function calculatePrices(
             oneTimePrice,
             discount
           );
-
         oneTimeFinal -= amount;
       }
-
       if (
         discount.applyType ===
         "monthly"
@@ -57,7 +50,6 @@ export function calculatePrices(
             monthlyPrice,
             discount
           );
-
         if (
           discount.duration &&
           discount.duration > 0
@@ -67,27 +59,23 @@ export function calculatePrices(
         } else {
           monthlyFirstPeriod -=
             amount;
-
           monthlyRemaining -=
             amount;
         }
       }
     }
   );
-
   return {
     oneTimeFinal:
       Math.max(
         oneTimeFinal,
         0
       ),
-
     monthlyFirstPeriod:
       Math.max(
         monthlyFirstPeriod,
         0
       ),
-
     monthlyRemaining:
       Math.max(
         monthlyRemaining,

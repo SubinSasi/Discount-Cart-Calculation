@@ -8,16 +8,10 @@ export type DiscountValueType =
 
 export interface Discount {
   id: string;
-
   name: string;
-
   applyType: DiscountApplyType;
-
   valueType: DiscountValueType;
-
   value: number;
-
   duration?: number;
-
   enabled: boolean;
 }

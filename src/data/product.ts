@@ -1,10 +1,7 @@
 export const product = {
   name: "Webasto Pure II laadpaal type 2",
-
   image:
-    "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=500",
-
+    "https://cdn.wasserman.eu/generated/images/s240/3084286/webasto-pure-ii-22-kw-charging-station-for-electric-cars-wallbox",
   oneTimePrice: 1000,
-
   monthlyPrice: 10,
 };

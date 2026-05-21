@@ -1,22 +1,17 @@
 import { create } from "zustand";
-
 import type { Discount } from "../types/discount";
 
 interface DiscountStore {
   discounts: Discount[];
-
   addDiscount: (
     discount: Discount
   ) => void;
-
   updateDiscount: (
     discount: Discount
   ) => void;
-
   deleteDiscount: (
     id: string
   ) => void;
-
   toggleDiscount: (
     id: string
   ) => void;
@@ -25,7 +20,6 @@ interface DiscountStore {
 export const useDiscountStore =
   create<DiscountStore>((set) => ({
     discounts: [],
-
     addDiscount: (discount) =>
       set((state) => ({
         discounts: [
@@ -33,7 +27,6 @@ export const useDiscountStore =
           discount,
         ],
       })),
-
     updateDiscount: (
       updatedDiscount
     ) =>
@@ -47,7 +40,6 @@ export const useDiscountStore =
                 : discount
           ),
       })),
-
     deleteDiscount: (id) =>
       set((state) => ({
         discounts:
@@ -56,7 +48,6 @@ export const useDiscountStore =
               discount.id !== id
           ),
       })),
-
     toggleDiscount: (id) =>
       set((state) => ({
         discounts:
